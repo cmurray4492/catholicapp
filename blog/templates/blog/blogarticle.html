@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block description %}{{ blogarticle.blog_description }}{% endblock %}
+
+{% block keywords %} {{ blogarticle.blog_tags }} {% endblock %}
+
+{% block title %}{{ blogarticle.blog_title }} | {% endblock %}
+
+
+{% block og_url %}https://www.godcountryfamily.org{{ request.get_full_path }}{% endblock %}
+
+{% block og_type %}Article{% endblock %}
+{% block og_title %}{{ blogarticle.blog_title }}{% endblock %}
+{% block og_description %}{{ blogarticle.blog_description }}{% endblock %}
+{% block og_image_url %}{{blogarticle.blog_image.url }}{% endblock %}
+
+{% block twitter_title %}  {{ blogarticle.blog_title }} {% endblock %}
+{% block twitter_description %} {{ blogarticle.blog_description }} {% endblock %}
+{% block twitter_image %}https://www.godcountryfamily.org{{blogarticle.blog_image.url }}{% endblock %}
+
+
+{% block content %}
+</header>
+<div class="section group blog-image">
+	<div class="col span_12_of_12">
+		<img src="{{ blogarticle.blog_image.url }}" class="blog-image" alt="{{ blogarticle.blog_title }}" width="100%"
+			max-height="15%"></div>
+</div>
+
+<div class="section group">
+	<div class="col span_1_of_12"></div>
+	<div class="col span_8_of_12">
+		<ul class="breadcrumb">
+			<li><a href="#">Home</a></li>
+			<li><a href="{% url 'bloghome' %}">Blog Home</a></li>
+			<li>{{ blogarticle.blog_title }}</li>
+		</ul>
+	</div>
+	<div class="col span_2_of_12"></div>
+	<div class="col span_1_of_12"></div>
+</div>
+
+<div class="section group">
+	<div class="col span_1_of_12"></div>
+	<div class="col span_8_of_12">
+		<h1 class="h1blog">{{ blogarticle.blog_title }}</h1>
+		<h2>{{ blogarticle.blog_subtitle }}</h2>
+		<p>
+		{{ blogarticle.blog_article | safe }}
+		</p>
+	</div>
+	<div class="col span_2_of_12">
+		<h3 class="h3Sidebar" >Article Tags</h3>
+		<p class="pSidebar" >{{ blogarticle.blog_tags }}</p>
+		<h4 class="h3Sidebar" >Author</h4>
+		<p class="pSidebar" >{{ blogarticle.blog_author }}</p>
+		<h4 class="h3Sidebar" >Date Posted</h4>
+		<p class="pSidebar" >{{ blogarticle.blog_date_posted }}</p>
+		<br> <hr> <br>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2036361940193427"
+            data-ad-slot="1675170918" data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+	</div>
+	<div class="col span_1_of_12"></div>
+</div>
+
+<!-- 
+<p>URL of this page: {{ request.get_full_path }}</p>
+-->
+
+{% endblock %}

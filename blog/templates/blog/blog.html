@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block description %}Blog God Country Family We need to speak up not let the liberal media control the information They are destorying our country, we are letting them. Let's taken this back. {% endblock %}
+
+{% block keywords %}conservative christian blog, catholic, to Jesus through Mary, right wing nut job blog{% endblock %}
+
+{% block title %}Blog Home | {% endblock %}
+
+{% block og_url %}https://www.godcountryfamily.org/blog/{% endblock %}
+{% block og_type %}Article{% endblock %}
+{% block og_title %}God Country Family Blog Home Page{% endblock %}
+{% block og_description %}Blog God Country Family We need to speak up not let the liberal media control the information They are destorying our country, we are letting them. Let's taken this back.{% endblock %}
+{% block og_image_url %}https://www.godcountryfamily.org/static/img/lakebanner1.jpg{% endblock %}
+
+{% block twitter_title %} God Country Family Blog Home Page {% endblock %}
+{% block twitter_description %} Blog God Country Family We need to speak up not let the liberal media control the information They are destorying our country, we are letting them. Let's taken this back. {% endblock %}
+{% block twitter_image %} https://www.godcountryfamily.org/static/img/lakebanner1.jpg {% endblock %}
+
+{% block content %}
+
+</header>
+ 
+ <main>
+
+<div class="section group blog-image">
+	<div class="col span_12_of_12">
+		<img src="{% static 'img/lakebanner1.jpg' %}" class="blog-image" alt="Southern Rosary Works Blog Banner" width="100%"
+			max-height="15%">
+	</div>
+</div>
+
+<div class="section group">
+	<div class="col span_12_of_12 bread">
+		<ul class="breadcrumb">
+			<li><a href="{% url 'home' %}">Home</a></li>
+			<li>Blog Home</li>
+		</ul>
+	</div>
+</div>
+
+
+<div class="section group">
+	<div class="col span_12_of_12 breadcrumb">
+		<h1 class="breadcrumb" >God Country Family Blog</h1>
+		<p class="breadcrumb">Welcome to our blog page! We are currently just getting started with our blog article, but we hope to bring 
+			you more content. We have chosen to pick quality over quantity and will soon provide voice and video blogs. As always, your 
+			respectful thoughts and feedback are welcome. Please feel free to disagree, but we will not suffer any disrespect. 	</p>
+
+		<p class="breadcrumb">Of course, this all assumes someone is actually visiting my pages. </p>	
+	</div>
+</div>
+
+<!-- <div class="row"> -->
+<div class="section group card-set">
+
+		{% if blogs %}
+		{% for blog in blogs%}
+			<div class="col span_3_of_12"> 
+				<div class="card" style="width: 95%;">
+					<img src="{{ blog.blog_card_image.url }}" class="card-img-top" style="width: 100%; height: 18rem;" alt="{{ blog.blog_title }}">
+					<div class="card-body">
+						<h2 class="card-title">{{ blog.blog_title }}</h2>
+						<h3 class="card-title">{{ blog.blog_subtitle }}</h3>
+						<p class="card-text">{{ blog.blog_description }}</p>
+						<a href="{% url 'blogarticle' blog.id blog.blog_slug %}" class="btncdm btn-full btn-card">Read More ...</a>
+					</div>
+				</div>
+			</div>
+
+	{% endfor %}
+	{% else %}
+	<div><p>There are no blogs loaded</p></div>
+	{% endif %}
+</div>
+<!-- </div> -->
+<br><br>
+{% endblock %}
+
+</main>
+
+
+
+   
