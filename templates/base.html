@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Catholic App</title>
+
+    <!-- <link rel="stylesheet" href="*.css"> -->
+    <link rel="stylesheet" href="{% static 'style3d4404df09c2e5d39ec1.css' %}">
+
+</head>
+<body>
+    <h1>Base HTML Page</h1>
+        {% include 'navbar.html' %}
+        {% include 'header.html' %}
+
+    <div class="section group">
+
+      <div class="col span_1_of_12"> </div>
+
+      <div class="col span_8_of_12">
+        {% block content %} {% endblock content %}
+      </div>
+
+      <div class="col span_2_of_12">
+        <p>This will be the side bar</p>
+        <p>Rendered her for put improved concerns his. Ladies bed wisdom theirs mrs men months set. Everything so dispatched as it increasing pianoforte. Hearing now saw perhaps minutes herself his. Of instantly excellent therefore difficult he northward. Joy green but least marry rapid quiet but. Way devonshire introduced expression saw travelling affronting. Her and effects affixed pretend account ten natural. Need eat week even yet that. Incommode delighted he resolving sportsmen do in listening. </p>
+        </div>
+
+        <div class="col span_1_of_12"></div>
+
+    </div>
+
+
+    {% include 'footer.html' %}
+
+    <!-- My JavaScript Files -->
+    <script src="{% static 'bundle55c450475828e2210e59.js' %}"></script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+</body>
+</html>

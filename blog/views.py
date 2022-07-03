@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 """ Views for the Blog App """
 from django.shortcuts import get_object_or_404, render
 from .models import BlogArticle

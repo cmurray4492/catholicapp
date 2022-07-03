@@ -1,0 +1,26 @@
+{% load static %}
+<nav class="logo" >  
+  <div class="logo">
+  <h3 class="nav_h3" >GCF Menu</h3>
+  <hr>
+    {% comment %} <img src="{% static 'tblogo.jpg' %}" alt="Talent Database Logo" />
+  </div> {% endcomment %}
+  <ul>
+    <li {% if '/' == request.path %} class="bilbo menu-active" {% else %} class="bilbo" {% endif %}><a
+        href="{% url 'home' %}">Home</a></li>
+    <li {% if 'blog' in request.path %} class="bilbo menu-active" {% else %} class="bilbo" {% endif %}><a
+        href="{% url 'bloghome' %}">Blog</a></li>
+    <li {% if 'about' in request.path %} class="bilbo menu-active" {% else %} class="bilbo" {% endif %}><a
+        href="{% url 'about' %}">About</a></li>
+    <li {% if 'contactus' in request.path %} class="bilbo menu-active" {% else %} class="bilbo" {% endif %}><a
+        href="#">Contact Us</a></li>
+    <li {% if 'hdocs' in request.path %} class="bilbo menu-active" {% else %} class="bilbo" {% endif %}><a
+      href="#">Hist Docs</a></li>
+    <li {% if 'usefulinfo' in request.path %} class="bilbo menu-active" {% else %} class="bilbo" {% endif %}><a
+        href="#">Useful Information</a></li>
+  </ul>
+  <hr>
+  <div class="menu-footer" >
+    <!--  <p>GCF</p> -->
+  </div>
+</nav>

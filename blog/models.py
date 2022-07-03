@@ -20,4 +20,4 @@ class BlogArticle(models.Model):
     blog_author = models.CharField(max_length=150)
 
     def __str__(self):
-        return self.blog_slu
+        return self.blog_slug
