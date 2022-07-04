@@ -11,3 +11,8 @@ def home(request):
 def about(request):
     '''View for the About page route'''
     return render(request, 'pages/about.html')
+
+
+def contact(request):
+    '''View for the Contact Us page route'''
+    return render(request, 'contact.html')

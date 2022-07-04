@@ -14,7 +14,7 @@ def bloghome(request):
 
 
 def blogarticle(request, blog_id, blog_slug):
-    """This is the function that provides dynamic content to each job post"""
+    """This is the function that provides dynamic content to each blog post"""
     blogarticle = get_object_or_404(BlogArticle, pk=blog_id)
     context = {
         'blogarticle': blogarticle,

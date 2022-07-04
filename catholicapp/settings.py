@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'tinymce',
     'blog.apps.BlogConfig',
     'pages.apps.PagesConfig',
+    'members.apps.MembersConfig',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
