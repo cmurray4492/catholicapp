@@ -7,7 +7,7 @@ class MemberAdmin(admin.ModelAdmin):
     list_display = ('id', 'member_first_name', 'member_last_name',
                     'member_email_address')
     list_display_links = ('id', 'member_email_address')
-    # list_editable = ('blog_article_active',)
+    list_editable = ('member_is_active',)
     search_fields = ('member_email_address',
                      'member_first_name', 'member_last_name')
     # prepopulated_fields = {"blog_slug": ("blog_title",)}
