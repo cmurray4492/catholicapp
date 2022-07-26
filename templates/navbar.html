@@ -14,11 +14,15 @@
         href="{% url 'about' %}">About</a></li>
     <li {% if 'contactus' in request.path %} class="bilbo menu-active" {% else %} class="bilbo" {% endif %}><a
         href="#">Contact Us</a></li>
-    <li {% if 'hdocs' in request.path %} class="bilbo menu-active" {% else %} class="bilbo" {% endif %}><a
-      href="#">Hist Docs</a></li>
+    <li {% if 'hdocs' in request.path %} class="bilbo menu-active" {% else %} class="bilbo" {% endif %}><a href="#">Hist Docs</></li>
     <li {% if 'usefulinfo' in request.path %} class="bilbo menu-active" {% else %} class="bilbo" {% endif %}><a
         href="#">Useful Information</a></li>
   </ul>
+
+  <a href="{% url 'signup' %}">Sign-up</a>
+  <a href="{% url 'login' %}">Login</a>
+  <a href="{% url 'logout' %}">Logout</a>
+
   <hr>
   <div class="menu-footer" >
     <!--  <p>GCF</p> -->
